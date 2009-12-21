@@ -10,7 +10,7 @@ begin
     gem.email = "nick@smartlogicsolutions.com"
     gem.homepage = "http://github.com/ngauthier/multitest"
     gem.authors = ["Nick Gauthier"]
-    gem.add_development_dependency "thoughtbot-shoulda"
+    gem.add_development_dependency "shoulda"
     gem.files.include(['lib/**/*.rb'])
   end
 rescue LoadError
