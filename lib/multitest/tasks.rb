@@ -45,6 +45,7 @@ end
 # Current Problems/Hacks
 #   1) For some reason 6 databases are created even though I've set cores to 2
 #   2) Hard-coding a check to db: namespace below
+#   3) There's not guarantee that "db:setup" task has been defined (doesn't exist by default in rails 2.1.x)
 def reenable_recursively(task_name)
   Rake::Task[task_name].send(:instance_variable_get, "@prerequisites").each { |prereq| 
     if Rake.application.lookup(prereq)
