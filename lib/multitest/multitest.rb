@@ -33,7 +33,7 @@ class Multitest
     $stderr.write @files.inspect+"\n"; $stderr.flush
     @cores.times do |c|
       @pipes << PipeDream.new
-      @children << SafeFork.fork do
+      @children << SafeFork.fork(c + 1) do
         Signal.trap("TERM") { exit }
         Signal.trap("HUP") { exit }
         pipe = @pipes.last
